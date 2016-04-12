@@ -9,10 +9,9 @@ git clone git@github.com:voronianski/simon-le-bottle.git
 cd simon-le-bottle
 npm install
 
-# update verify token in `package.json`
+# update APP_VERIFY_TOKEN in `package.json`
+# follow steps at https://developers.facebook.com/docs/messenger-platform/quickstart
 
 now # deploy via https://zeit.co/now
-
-# follow steps at https://developers.facebook.com/docs/messenger-platform/quickstart
 ```
 
