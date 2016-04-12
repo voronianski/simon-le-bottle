@@ -7,28 +7,11 @@ const express = require('express');
 const request = require('superagent');
 const bodyParser = require('body-parser');
 
-const verifyToken = process.env.APP_VERIFY_TOKEN;
 let pageToken = process.env.APP_PAGE_TOKEN;
-let errors = [];
+const verifyToken = process.env.APP_VERIFY_TOKEN;
 
 const app = express();
-
 app.use(bodyParser.json());
-
-// update token of existing app
-app.post('/token', (req, res) => {
-    if (req.body.verifyToken === verifyToken) {
-        pageToken = req.body.token;
-        return res.sendStatus(200);
-    }
-    res.sendStatus(403);
-});
-app.get('/token', (req, res) => {
-    if (req.body.verifyToken === verifyToken) {
-        return res.send({token: pageToken});
-    }
-    res.sendStatus(403);
-});
 
 app.get('/webhook', (req, res) => {
     if (req.query['hub.verify_token'] === verifyToken) {
@@ -72,10 +55,8 @@ function sendMessage (sender, message) {
         .end((err, res) => {
             if (err) {
                 console.log('Error sending message: ', err);
-                errors.push(err);
             } else if (res.body.error) {
                 console.log('Error: ', res.body.error);
-                errors.push(res.body.error);
             }
         });
 }
@@ -120,13 +101,20 @@ function sendGenericMessage (sender) {
     });
 }
 
-// get all erros of now app
-app.get('/errors', (req, res) => {
-    res.send(errors);
+// update and check page token for an existing app
+// it's necessary because https://zeit.co/now generates new urls on every deploy
+app.post('/token', (req, res) => {
+    if (req.body.verifyToken === verifyToken) {
+        pageToken = req.body.token;
+        return res.sendStatus(200);
+    }
+    res.sendStatus(403);
+});
+app.get('/token', (req, res) => {
+    if (req.body.verifyToken === verifyToken) {
+        return res.send({token: pageToken});
+    }
+    res.sendStatus(403);
 });
 
 app.listen(3000);
-
-process.on('uncaughtException', (err) => {
-    errors.push(err);
-});
