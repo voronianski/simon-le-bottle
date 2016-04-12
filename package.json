@@ -1,0 +1,18 @@
+{
+  "name": "le-bot",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "superagent": "^1.8.3"
+  },
+  "scripts": {
+    "start": "APP_PAGE_TOKEN=\"0\" APP_VERIFY_TOKEN=\"0\" node index.js"
+  },
+  "devDependencies": {
+    "eslint": "^2.7.0",
+    "eslint-config-airbnb": "^7.0.0",
+    "eslint-plugin-jsx-a11y": "^0.6.2",
+    "eslint-plugin-react": "^4.3.0"
+  }
+}
