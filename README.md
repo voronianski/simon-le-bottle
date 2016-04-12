@@ -11,6 +11,6 @@ npm install
 
 now # deploy via https://zeit.co/now
 
-# follow steps in https://developers.facebook.com/docs/messenger-platform/quickstart
+# follow steps at https://developers.facebook.com/docs/messenger-platform/quickstart
 ```
 
