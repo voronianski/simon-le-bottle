@@ -4,6 +4,8 @@
 
 <img src="https://dl.dropboxusercontent.com/u/100463011/simon-le-bottle-demo.gif" />
 
+## Guide ([details](https://github.com/voronianski/simon-le-bottle/blob/master/GUIDE.md))
+
 ```bash
 git clone git@github.com:voronianski/simon-le-bottle.git
 cd simon-le-bottle
@@ -16,5 +18,3 @@ now
 # follow steps at https://developers.facebook.com/docs/messenger-platform/quickstart
 # update APP_PAGE_TOKEN via POST /token
 ```
-
-Detailed guide
