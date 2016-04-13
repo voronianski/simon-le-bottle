@@ -103,6 +103,7 @@ function sendGenericMessage (sender) {
 
 // update and check page token for an existing app
 // it's necessary because https://zeit.co/now generates new urls on every deploy
+// but there's no way to update webhook url on facebook messenger platform
 app.post('/token', (req, res) => {
     if (req.body.verifyToken === verifyToken) {
         pageToken = req.body.token;
