@@ -2,7 +2,7 @@
 
 This walkthrough describes how to play with Facebook Messenger Platform in few easy steps.
 
-### Get the code
+### 1. Get the code
 
 Start from cloning this repo and install all dependencies:
 
@@ -12,9 +12,9 @@ cd simon-le-bottle
 npm install
 ```
 
-### Create verify token
+### 2. Create verify token
 
-You'll need to put something into verify token environment variable into `package.json` start script in order to setup webhooks.
+You'll need to put something as verify token environment variable into `package.json` start script in order to setup webhooks.
 
 ```json
 "scripts": {
@@ -22,7 +22,7 @@ You'll need to put something into verify token environment variable into `packag
 },
 ```
 
-### Deployment
+### 3. Deployment
 
 This example uses [NOW](https://zeit.co/now). It makes the process of deployment of node.js applications just a matter of running one word in command-line:
 
@@ -33,16 +33,16 @@ now
 # e.g. https://simon-le-bottle-udalkhaxub.now.sh
 ```
 
-[NOW](https://zeit.co/now) is fast and serves under HTTPS which is important requirement in order to work with Messenger Platform. However has several limitations currently:
+[NOW](https://zeit.co/now) is fast and serves under HTTPS which is important requirement in order to work with Messenger Platform. However it has several limitations currently:
 
 - it generates new url on every deployment but doesn't support custom domains yet
 - there's no way to see logs of the app yet
 
-Though this [functionality will be added very soon](https://twitter.com/zeithq/status/720069484375969794), I advice to use [AWS Lambda functions](https://aws.amazon.com/lambda) with API Gateway if you would like to have full control of what's going on in the app.
+Though this [functionality will be added very soon](https://twitter.com/zeithq/status/720069484375969794) I advice to use [AWS Lambda functions](https://aws.amazon.com/lambda) with API Gateway if you would like to have full control of what's going on in the app.
 
 ### Setup Facebook app and page 
 
-Now you're ready to go to Facebook developers panel, create or use existing app (and page) and setup its' webhooks. Follow steps in [official quickstart guide](https://developers.facebook.com/docs/messenger-platform/quickstart). 
+Now you're ready to go to Facebook developers panel, create or use existing app (and page) and setup its' webhooks. [**Please Follow steps from official quickstart guide**](https://developers.facebook.com/docs/messenger-platform/quickstart).
 
 Your webhook url will look like `https://simon-le-bottle-hash.now.sh/webhook`.
 
