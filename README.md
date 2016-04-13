@@ -17,3 +17,4 @@ now
 # update APP_PAGE_TOKEN via POST /token
 ```
 
+Detailed guide
