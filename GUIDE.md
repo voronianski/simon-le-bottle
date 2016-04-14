@@ -55,8 +55,8 @@ You'll need to send Page Access Token to the app via request:
 ```bash
 curl -i \ 
     -H "Content-Type: application/json" \ 
-    -X POST 
-    -d "{\"verifyToken\": \"YOUR VERIFY TOKEN\", \"token\": \"YOUR PAGE ACCESS TOKEN\"} \
+    -X POST \
+    -d "{\"verifyToken\": \"YOUR VERIFY TOKEN\", \"token\": \"YOUR PAGE ACCESS TOKEN\"}" \
     https://YOUR_GENERATED_URL.now.sh/token
 ```
 
