@@ -14,12 +14,11 @@ npm install
 
 ### 2. Create verify token
 
-You'll need to put something as verify token environment variable into `package.json` start script in order to setup webhooks.
+You'll need to put something as verify token environment variable into a `.env` file to be picked up by the start script to set up webhooks.
 
-```json
-"scripts": {
-    "start": "APP_PAGE_TOKEN=\"0\" APP_VERIFY_TOKEN=\"YOUR VERIFY TOKEN\" node index.js"
-},
+```bash
+APP_PAGE_TOKEN=0
+APP_VERIFY_TOKEN="YOUR VERIFY TOKEN"
 ```
 
 ### 3. Deployment

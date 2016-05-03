@@ -11,7 +11,7 @@ git clone git@github.com:voronianski/simon-le-bottle.git
 cd simon-le-bottle
 npm install
 
-# update APP_VERIFY_TOKEN in `package.json`
+# create a .env file and add APP_VERIFY_TOKEN
 
 # deploy via https://zeit.co/now
 now 
