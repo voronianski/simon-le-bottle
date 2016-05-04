@@ -7,9 +7,10 @@
     "superagent": "^1.8.3"
   },
   "scripts": {
-    "start": "APP_PAGE_TOKEN=\"0\" APP_VERIFY_TOKEN=\"0\" node index.js"
+    "start": "node index.js"
   },
   "devDependencies": {
+    "dotenv": "^2.0.0",
     "eslint": "^2.7.0",
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-jsx-a11y": "^0.6.2",
